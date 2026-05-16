@@ -1,0 +1,183 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  background: white;
+  color: black;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background: white;
+}
+
+/* Formula input at top */
+
+.formula-section {
+  width: 100%;
+  padding: 16px;
+  background: white;
+}
+
+#formula {
+  display: block;
+  width: 100%;
+  min-height: 120px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  resize: vertical;
+  background: white;
+  color: black;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: clamp(16px, 2vw, 24px);
+  line-height: 1.45;
+}
+
+.formula-row {
+  width: 100%;
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+#formulaPreset {
+  border: 0;
+  outline: 0;
+  background: white;
+  color: black;
+  font: inherit;
+  font-size: 16px;
+  padding: 8px 0;
+}
+
+#formulaStatus {
+  font-size: 14px;
+  color: black;
+  opacity: 0.7;
+}
+
+#formulaStatus.ok {
+  opacity: 0.7;
+}
+
+#formulaStatus.error {
+  opacity: 1;
+}
+
+/* Waveform centered */
+
+.waveform-section {
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  padding: 16px;
+}
+
+#waveform {
+  display: block;
+  width: 100%;
+  height: min(44vh, 420px);
+  background: white;
+}
+
+/* Piano at bottom */
+
+.piano-section {
+  width: 100%;
+  background: white;
+  padding: 0;
+}
+
+.piano {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  display: flex;
+  user-select: none;
+  touch-action: none;
+  background: white;
+}
+
+.key {
+  border: 1px solid black;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  background: white;
+  color: black;
+}
+
+.white {
+  height: 260px;
+  flex: 1;
+  z-index: 1;
+}
+
+.white.active {
+  background: black;
+  color: white;
+}
+
+.black {
+  position: absolute;
+  top: 0;
+  width: calc(100% / 14 * 0.62);
+  height: 160px;
+  z-index: 2;
+  background: black;
+  color: white;
+  border: 1px solid black;
+}
+
+.black.active {
+  background: white;
+  color: black;
+}
+
+@media (max-width: 700px) {
+  .piano {
+    height: 220px;
+  }
+
+  .white {
+    height: 220px;
+  }
+
+  .black {
+    height: 135px;
+  }
+
+  .key {
+    font-size: 10px;
+    padding-bottom: 8px;
+  }
+
+  .formula-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}
