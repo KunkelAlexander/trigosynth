@@ -15,12 +15,13 @@ const decay = 2.5;
 // How long does a sample play at most?
 const sampleDuration = 10;
 // How many seconds to show in the waveform preview (max)
-const plotDurationMax = 3;
+const plotDurationMax = 1.0;
+const plotDurationMin = 0.5;
 
 function getPlotDuration() {
   const width = waveformCanvas.getBoundingClientRect().width;
-  // Keep ~8px per cycle at the 20 Hz preview frequency
-  return Math.min(plotDurationMax, Math.max(0.5, width / 160));
+  // Keep ~25px per cycle at the 20 Hz preview frequency
+  return Math.min(plotDurationMax, Math.max(plotDurationMin, width / (20*25)));
 }
 // Duration of ring after key is released
 const release = 2.5;
