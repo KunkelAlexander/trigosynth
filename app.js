@@ -179,8 +179,10 @@ async function playNote(midi) {
   activeSources.set(midi, { source, gain });
 
   source.onended = () => {
-    activeSources.delete(midi);
-    setKeyActive(midi, false);
+    if (activeSources.get(midi)?.source === source) {
+      activeSources.delete(midi);
+      setKeyActive(midi, false);
+    }
   };
 
   setKeyActive(midi, true);
