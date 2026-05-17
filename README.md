@@ -1,6 +1,6 @@
 # Trigosynth
 
-A [browser-based synthesizer](https://kunkelalexander.github.io/trigosynth/) where you define the sound of each note as a mathematical formula using sines, cosines, and exponentials. Play notes with your keyboard or by clicking the piano keys. Vibe-coded using LLMs.
+A [browser-based synthesizer](https://kunkelalexander.github.io/trigosynth/) where you define the sound of each note as a mathematical formula using sines, cosines, and exponentials. Play notes with your keyboard or by clicking the piano keys. Heavily relied on LLMs.
 
 ![](app.png) 
 
