@@ -353,7 +353,7 @@ function updateFormulaLive() {
       currentSampleFunction = compiled;
       formulaPreset.value = "custom";
 
-      setFormulaStatus("Formula OK", "ok");
+      setFormulaStatus("", "ok");
       previewFormula();
     } catch (error) {
       setFormulaStatus(error.message, "error");
@@ -364,6 +364,8 @@ function updateFormulaLive() {
 const pressedKeys = new Set();
 
 document.addEventListener("keydown", event => {
+  if (document.activeElement === formulaInput) return;
+
   const key = event.key.toLowerCase();
   const midi = keyToMidi.get(key);
 
@@ -378,6 +380,8 @@ document.addEventListener("keydown", event => {
 });
 
 document.addEventListener("keyup", event => {
+  if (document.activeElement === formulaInput) return;
+
   const key = event.key.toLowerCase();
   const midi = keyToMidi.get(key);
 
@@ -399,7 +403,7 @@ formulaPreset.addEventListener("change", () => {
 
   try {
     currentSampleFunction = compileFormula(formulaInput.value);
-    setFormulaStatus("Formula OK", "ok");
+    setFormulaStatus("", "ok");
     previewFormula();
   } catch (error) {
     setFormulaStatus(error.message, "error");
@@ -410,5 +414,5 @@ window.addEventListener("resize", resizeWaveformCanvas);
 
 buildPianoUI();
 resizeWaveformCanvas();
-setFormulaStatus("Formula OK", "ok");
+setFormulaStatus("", "ok");
 previewFormula();
