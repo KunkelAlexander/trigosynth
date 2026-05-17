@@ -270,6 +270,7 @@ function attachKeyEvents(element, midi) {
 
   element.addEventListener("pointerdown", event => {
     event.preventDefault();
+    if (document.activeElement === formulaInput) formulaInput.blur();
     element.setPointerCapture(event.pointerId);
     playNote(midi);
   });
