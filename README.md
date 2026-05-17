@@ -4,7 +4,7 @@ A [browser-based synthesizer](https://kunkelalexander.github.io/trigosynth/) whe
 
 ![](app.png) 
 
-This tool is based on [Íñigo Quílez](https://iquilezles.org/)'s video [Live coding musical instruments with mathematics](https://www.youtube.com/watch?v=ogFAHvYatWs). I rebuilt the tool so that I could play with it on my fone. All credit goes to Íñigo Quílez who is amazing. Please visit their blog. :) 
+This tool is based on [Íñigo Quílez](https://iquilezles.org/)'s video [Live coding musical instruments with mathematics](https://www.youtube.com/watch?v=ogFAHvYatWs). I rebuilt the tool so that I could play with it on my phone. All credit goes to Íñigo Quílez who is amazing. Please visit their blog. :) 
 
 
 ## Devlog
