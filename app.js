@@ -77,10 +77,10 @@ const formulaPresets = {
     "(f*t % 1) * 2 - 1",
 
   sine:
-    "sin(2*pi*f*t) * exp(-decay*t)",
+    "sin(2*pi*f*t)",
 
   "8bit":
-    "(4/pi) * (sin(2*pi*f*t) + sin(2*pi*3*f*t)/3 + sin(2*pi*5*f*t)/5 + sin(2*pi*7*f*t)/7 + sin(2*pi*9*f*t)/9 + sin(2*pi*11*f*t)/11) * exp(-decay*t)"
+    "(4/pi) * (sin(2*pi*f*t) + sin(2*pi*3*f*t)/3 + sin(2*pi*5*f*t)/5 + sin(2*pi*7*f*t)/7 + sin(2*pi*9*f*t)/9 + sin(2*pi*11*f*t)/11)"
 };
 
 const keyToMidi = new Map(notes.map(note => [note.key, note.midi]));
