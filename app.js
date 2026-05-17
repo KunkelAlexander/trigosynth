@@ -14,8 +14,14 @@ const waveformCtx = waveformCanvas.getContext("2d");
 const decay = 2.5;
 // How long does a sample play at most?
 const sampleDuration = 10;
-// How many seconds to show in the waveform preview
-const plotDuration = 3;
+// How many seconds to show in the waveform preview (max)
+const plotDurationMax = 3;
+
+function getPlotDuration() {
+  const width = waveformCanvas.getBoundingClientRect().width;
+  // Keep ~8px per cycle at the 20 Hz preview frequency
+  return Math.min(plotDurationMax, Math.max(0.5, width / 160));
+}
 // Duration of ring after key is released
 const release = 2.5;
 
@@ -103,8 +109,6 @@ function midiToFreq(midi) {
 
 function compileFormula(input) {
   const expr = input
-    .replaceAll("np.", "")
-    .replaceAll("numpy.", "")
     .replaceAll("^", "**");
 
   const fn = new Function('t', 'f', 'freq', 'decay', `"use strict";
@@ -340,7 +344,7 @@ function previewFormula() {
       initAudio();
     }
 
-    const buffer = createCustomSample(20, plotDuration);
+    const buffer = createCustomSample(20, getPlotDuration());
 
     drawWaveform(buffer);
   } catch {
