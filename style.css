@@ -181,3 +181,55 @@ body {
     gap: 4px;
   }
 }
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .formula-section {
+    padding: 6px 12px;
+  }
+
+  #formula {
+    min-height: 48px;
+    font-size: 14px;
+    line-height: 1.3;
+  }
+
+  .formula-row {
+    margin-top: 4px;
+    gap: 12px;
+  }
+
+  #formulaPreset {
+    font-size: 13px;
+    padding: 2px 0;
+  }
+
+  #formulaStatus {
+    font-size: 12px;
+  }
+
+  .waveform-section {
+    min-height: unset;
+    padding: 4px 12px;
+  }
+
+  #waveform {
+    height: min(22vh, 120px);
+  }
+
+  .piano {
+    height: 120px;
+  }
+
+  .white {
+    height: 120px;
+  }
+
+  .black {
+    height: 74px;
+  }
+
+  .key {
+    font-size: 9px;
+    padding-bottom: 4px;
+  }
+}
