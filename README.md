@@ -13,6 +13,8 @@ This tool is based on [Íñigo Quílez](https://iquilezles.org/)'s video [Making
 - Improve mobile layout after testing
 - Fix a bug where the keyboard would capture input keys and not allow you to type equations
 - Fix bug where holding a key would lead to it not being released because the browser triggers a long-press action
+- Fix bug where pressing multiple keys would lead to them not being released correctly
+- Add seesaw
 
 ### 16.05.2026
 - When you press a key, the app generates a PCM audio buffer entirely in JavaScript using the Web Audio API
