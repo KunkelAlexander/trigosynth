@@ -73,6 +73,9 @@ const formulaPresets = {
   pluck:
     "(sin(2*pi*f*t) + 0.25*sin(2*pi*2*f*t)) * exp(-7*t)",
 
+  seesaw:
+    "(f*t % 1) * 2 - 1",
+
   sine:
     "sin(2*pi*f*t) * exp(-decay*t)",
 
