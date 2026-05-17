@@ -255,6 +255,10 @@ function getBlackKeyLeft(midi) {
 }
 
 function attachKeyEvents(element, midi) {
+  element.addEventListener("contextmenu", event => {
+    event.preventDefault();
+  });
+
   element.addEventListener("pointerdown", event => {
     event.preventDefault();
     element.setPointerCapture(event.pointerId);
