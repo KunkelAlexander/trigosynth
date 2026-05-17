@@ -257,6 +257,7 @@ function getBlackKeyLeft(midi) {
 function attachKeyEvents(element, midi) {
   element.addEventListener("pointerdown", event => {
     event.preventDefault();
+    element.setPointerCapture(event.pointerId);
     playNote(midi);
   });
 
